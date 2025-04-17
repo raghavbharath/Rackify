@@ -1,32 +1,27 @@
 ## Rackify 🚲
 
-A prototype bike racking system allowing users to pay to access bikes racks distributed across major cities via <a href="https://github.com/BurhanNaveed0/RackifyMobileApp">mobile application</a> or pre-paid card. 
+A prototype bike racking system allowing users to pay to access bike racks distributed across major cities via a mobile application or pre-paid card. 
 Achieved 3rd place overall at NJIT’s spring 2024 IEEE Hardware Hackathon, winning a $500 cash prize.
 
-Team Members: Burhan Naveed, Matthew Levine, Prabhav Sharma, Tanush Tammanagoudar, Raghav Bharath
+Team Members: Raghav Bharath, Burhan Naveed, Matthew Levine, Prabhav Sharma, Tanush Tammanagoudar
 
 ## Project Status ✔
 
-Update 1:
+We were inspired to create this smart bike lock by the many bikes and scooters used by college students at NJIT and Newark. We believe that the future for smart cities is micro-mobility devices like bikes and scooters that can be very energy efficient and take up very little space.
 
-Hackathon project complete. Post competition finishing touches in development:
+Our smart lock is a contactless solution that aims to improve the experience of bike and scooter users. Instead of needing to carry locks around everywhere, the lock would be built directly into the rack. The system can work with any RFID card, and we also developed a web server that can remotely operate the device. When one person scans to lock their device, only their card can unlock it. This is an effortless and intuitive experience for the user, working just like any regular contactless door or payment system.
 
+Mechanically, the system works via a worm gear ring that runs along V-groove guides. The ring has a cutout that allows a bike wheel or scooter post to fit in place, and then, when it rotates, it closes off the opening.
+
+In software, we use an RFID scanner and store the ID of whatever card is used to lock it, and then check for that card when unlocking. We also incorporated a buzzer to add feedback so users know that their card is scanning. Finally, we developed a basic website to show how this could be implemented on a larger scale with GPS locations and remote operations.
+
+Software Accomplishments: 
 - Transferring mock HTML mobile app to React Native for demoing on Expo.
 - Adding user Authentication with Appwrite.
 - Handling rack occupation data in Appwrite.
 
-Update 2: 
+Tools Used: SolidWorks CAD and Autodesk Fusion360 (Worm gear traversing V-groove guides), ESP32, JavaScript, C++, FastAPI backend, PlatformIo, LL2390D H-Bridge Chip, IRF510 MOSFET
 
-Rackify <a href="https://github.com/BurhanNaveed0/RackifyMobileApp">mobile application</a> complete!
-
-- HTML prototype app ported to mobile app via React Native + Expo
-    - Built dashboard for users to see occupied racks
-    - Developed map interface for users to access bike racks. 
-- User Authentication handlded with Appwrite Auth. feature. 
-- User data + Station data handled with Appwrite database feature.
-
-![authgifsmall](https://github.com/user-attachments/assets/ee739c59-d652-4d95-be83-20c1cd3c5040)
-![mapgifsmall](https://github.com/user-attachments/assets/418bd6be-1b67-4b94-a95e-eda8efaa8638)
 
 ## Project Demos 🎥
 
@@ -52,16 +47,18 @@ Rackify <a href="https://github.com/BurhanNaveed0/RackifyMobileApp">mobile appli
 ## Reflection 📝
 
 ### What was the context for this project?
-This was a 24 hour project built during the NJIT IEEE Spring 2024 Hackathon. The aim of the project, going along with the theme of the Hackathon, was to create a working prototype of a system to make life easier in an Urban setting. This had to be acomplished with resources provided by IEEE such as general electronic parts (DC Motors, Stepper Motors, RFID Scanners, Resistors, Transistors, etc.), mircocontrollers (ESP32 and the Arduino), and makerspace tools (3D Printers, Lazer Cutting Machines, etc.)
+Rackify was a 24-hour project built during the NJIT IEEE Spring 2024 Hardware Hackathon. The project aimed to create a working prototype of a system to make life easier in an Urban setting. If we weren't going to invent an entirely new city infrastructure system, we wanted to advance some already existing component of it, and we found a smart bike lock project to be the most practical and useful design for Newark's environment. Some resources we used were electronic parts (DC Motors, Stepper Motors, RFID Scanners, Resistors, Transistors, etc.), microcontrollers (ESP32 and the Arduino), and makerspace tools (3D Printers, Laser Cutting Machines, etc.)
 
 ### What did your group set out to build? What was the planning process like?
-After one hour of brainstorming as a team, we decided that we would stick to the Hacakthon theme category of Urban improvement. We settled on creating a prototype for a bike racking system that could be distributed throughout any city with users being able to pay for a rack via mobile app or with a pre-paid card. Upon deciding the idea, we split up our crew of 5 into teams working on different sectors of the prototype based on their experience with the group being split into a mechanical, hardware, and software subteams. The mech sub-team was responsible for CADing the locking mechanism, 3D printing the gears, lazer cutting the wood frame, and finally putting together the materials. The electrical subteam was responsible for picking the correct parts to direct power to each subunit of the locking mechanims (motors, power sources, etc.), create schematics for the motor control unit and the RFID scanner, and work with the mech team to assemble all electornics onto the bike lock. Lastly the software subteam was responsible for coding the firmware to control the RFID scanner and the locking mehcanism motors. On top of this they also programmed the webserver hosted on the ESP32 chip aswell as a mobile app in order for users to be able to remotely access the bike rack via their mobile devices. Overall the planning process went pretty smooth and the splitting of the group was really effective in making sure the project was completed within the time window provided. 
+We designed a prototype for a bike racking system that could be distributed throughout any city with users being able to pay for a rack via mobile app or with a pre-paid card. Upon deciding on the idea, we split up our crew of 5 into teams working on different sectors of the prototype based on their experience, with the group being split into mechanical, hardware, and software subteams. The mech sub-team was responsible for CADing the locking mechanism, 3D printing the gears, laser cutting the wood frame, and finally putting together the materials. The electrical subteam was responsible for picking the correct parts to direct power to each subunit of the locking mechanisms (motors, power sources, etc.), creating schematics for the motor control unit and the RFID scanner, and working with the mech team to assemble all electronics onto the bike lock. Lastly, the software subteam was responsible for coding the firmware to control the RFID scanner and the locking mechanism motors. On top of this, they also programmed the web server hosted on the ESP32 chip, as well as a mobile app for users to be able to remotely access the bike rack via their mobile devices. Overall, the planning process went pretty smoothly, and the splitting of the group was effective in making sure the project was completed within the time window provided. 
 
 ### How was this project a learning experience for your group?
-The project turned out to be an excellent learning experience for all team members. Team members worked to put their prior Engineering/CS knowledge to the task in their respective areas, working fast in a high stress environment with the deadline approaching within 24 hours. They also moved between subteams, gaining experience not only in their specialty but also in other areas they never tried in (Software subteam helping with CADing, Electrical Subteam helping with writing firmware, etc.) The biggest learing experience however was with networking and marketing our product to the judges. Throughout the day team members connected with other students and IEEE board members, exchanging progress reports on projects and helping each other out during technical difficulties. In the last 10 minutes of the hacking period, the team collaborated to create videos and project descriptions to submit on devpost. After selection for top 10, the team presented infront of qualified judges with only 5 minutes to present the project. The presentation forced us to talk about our project on the fly and work on our confidence despite having very minimal sleep from the night before. 
+This project was an excellent learning experience for all team members. Team members worked to put their prior Engineering/CS knowledge to the task in their respective areas, working fast in a high-stress environment with the deadline approaching within 24 hours. They also moved between subteams, gaining experience not only in their specialty but also in other areas they had never tried in (Software subteam helping with CADing, Electrical Subteam helping with writing firmware, etc.) The biggest learning experience, however, was with networking and marketing our product to the judges. Throughout the day, team members connected with other students and IEEE board members, exchanging progress reports on projects and helping each other out during technical difficulties. In the last 10 minutes of the hacking period, the team collaborated to create videos and project descriptions to submit on DevPost. After selection for the top 10, the team presented in front of qualified judges with only 5 minutes to present the project. The presentation forced us to talk about our project on the fly and work on our confidence despite having very minimal sleep from the night before. 
 
 ### What were some setbacks during development?
-Despite completing our project within the alloted timeframe and winning 3rd place, it is safe so that production was not seamless. While indivdual sections of the project were completed on time and efficiently, the combination of sections was not. For one, the RFID scanner, despite working correctly in an isolated environment, was not working when attached to the locking mechanism, indicating that the re-assembly of the scanner electronics was done incorrectly. Secondly, the motor which theoretically should have been able to power the ring gear used to engage the lock, was not doing so properly. Lastly, on the software side of things, the HTTP request sent from the app to the bike rack was not always being recieved due to the NJIT network's inbound request restrictions.
+Despite completing our project within the allotted timeframe and winning 3rd place, it is safe so that production was not seamless. While individual sections of the project were completed on time and efficiently, the combination of sections was not. For one, the RFID scanner, despite working correctly in an isolated environment, was not working when attached to the locking mechanism, indicating that the re-assembly of the scanner electronics was done incorrectly. Secondly, the motor, which theoretically should have been able to power the ring gear used to engage the lock, was not doing so properly. Lastly, on the software side of things, the HTTP request sent from the app to the bike rack was not always being received due to the NJIT network's inbound request restrictions.
 
 ### What technologies were used?
-The main element powering the hardware side of the project was the ESP32 Microcontroller. This microcontroller was an extremely important asset to our project as it allowed us to power our electronics with its GPIO capabilities aswell as handle HTTP requests through its onboard WiFi chip. On the firmware side of things, the C++ Arduino Framework was used with the PlatformIO IDE in order to allow for quick and easy development for the board and easy access to countless pre-made drivers for parts like the RFID scanner and the stepper motor. For the mobile application portion of the project, due to the small amount of time left, a simple HTML mock application was created rather than a full fledged React Native app as it was easy to setup and get running for proof of concept. 
+The main element powering the hardware side of the project was the ESP32 Microcontroller. This microcontroller was an extremely important asset to our project as it allowed us to power our electronics with its GPIO capabilities as well as handle HTTP requests through its onboard WiFi chip. On the firmware side of things, the C++ Arduino Framework was used with the PlatformIO IDE to allow for quick and easy development for the board and easy access to countless pre-made drivers for parts like the RFID scanner and the stepper motor. For the mobile application portion of the project, due to the small amount of time left, a simple HTML mock application was created rather than a full-fledged React Native app, as it was easy to set up and get running for proof of concept. 
+
+Resources: Electronic parts (DC Motors, Stepper Motors, RFID Scanners, Resistors, Transistors, etc.), Microcontrollers (ESP32 and the Arduino), and Makerspace tools (3D Printers, Laser Cutting Machines, etc.)
