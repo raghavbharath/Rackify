@@ -3,6 +3,10 @@
 A prototype bike racking system allowing users to pay to access bike racks distributed across major cities via a mobile application or pre-paid card. 
 Achieved 3rd place overall at NJIT’s spring 2024 IEEE Hardware Hackathon, winning a $500 cash prize.
 
+<a href="https://youtube.com/shorts/NAM2hvzJ7jc?si=gZGoiGT7VmTo2jn6"> 360 View of Rackify Bike Lock</a>
+
+
+
 Team Members: Raghav Bharath, Burhan Naveed, Matthew Levine, Prabhav Sharma, Tanush Tammanagoudar
 
 ## Project Status ✔
